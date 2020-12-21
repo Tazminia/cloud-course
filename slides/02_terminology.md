@@ -2,11 +2,13 @@
 
 <!-- .slide: class="page-title" -->
 
+
+
 ## Table des matières
 
-<!-- .slide: id="master-toc" class="toc" -->
+<!-- .slide: class="toc" -->
 
-- [Présentation du cours"](#/1)
+- [Présentation du cours](#/1)
 - **[Terminologie](#/2)**
 - [Le contexte cloud](#/3)
 - [Les services cloud](#/4)

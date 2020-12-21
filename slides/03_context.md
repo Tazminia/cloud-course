@@ -2,9 +2,11 @@
 
 <!-- .slide: class="page-title" -->
 
+
+
 ## Table des matières
 
-<!-- .slide: id="master-toc" class="toc" -->
+<!-- .slide: class="toc" -->
 
 - [Présentation du cours"](#/1)
 - [Terminologie](#/2)
