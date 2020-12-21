@@ -1,4 +1,4 @@
-# Cloud computing
+# Les services cloud
 
 <!-- .slide: class="page-title" -->
 
@@ -16,3 +16,19 @@
 - [Gestion d'identité et d'accès](#/6)
 - [La conteneurisation](#/7)
 - [L'infrastructure as code](#/6)
+
+
+
+## Contenu du chapitre
+
+<!-- .slide: class="toc" -->
+
+- [Types de services](#/types)
+- [Catégories de services](#/category)
+- [Localisation de services](#/localization)
+
+
+
+## Types de services
+
+<!-- .slide: id="types" -->

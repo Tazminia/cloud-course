@@ -9,15 +9,9 @@
 <!-- .slide: id="master-toc" class="toc" -->
 
 - [Présentation du cours](#/1)
-- [Terminologie](#/2)
-- [Le contexte cloud](#/3)
-- [Les services cloud](#/4)
-- [Organisation des ressources](#/5)
-- [Gestion d'identité et d'accès](#/6)
-- [La conteneurisation](#/7)
-- [L'infrastructure as code](#/6)
-
-
-
-
-<!-- .slide: class="page-questions" -->
+- [Le contexte cloud](#/2)
+- [Les services cloud](#/3)
+- [Organisation des ressources](#/4)
+- [Gestion d'identité et d'accès](#/5)
+- [La conteneurisation](#/6)
+- [L'infrastructure as code](#/7)

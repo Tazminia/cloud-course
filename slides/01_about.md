@@ -9,13 +9,12 @@
 <!-- .slide: class="toc" -->
 
 - **[Présentation du cours](#/1)**
-- [Terminologie](#/2)
-- [Le contexte cloud](#/3)
-- [Les services cloud](#/4)
-- [Organisation des ressources](#/5)
-- [Gestion d'identité et d'accès](#/6)
-- [La conteneurisation](#/7)
-- [L'infrastructure as code](#/6)
+- [Le contexte cloud](#/2)
+- [Les services cloud](#/3)
+- [Organisation des ressources](#/4)
+- [Gestion d'identité et d'accès](#/5)
+- [La conteneurisation](#/6)
+- [L'infrastructure as code](#/7)
 
 
 
@@ -26,6 +25,7 @@
 - [Le formateur](#/le-formateur)
 - [Motivation](#/motivation)
 - [Certification](#/certification)
+- [Vision du cours](#/vision-du-cours)
 
 
 
@@ -33,15 +33,12 @@
 
 <!-- .slide: id="le-formateur" -->
 
-- Expériences
+- Le professionnel (Missions)
   - Norauto international: Consultant architecte cloud
   - Invivoo: Ingénieur cloud
   - Société Générale CIB: Consultant DevOps
   - iph: Consultant Développeur Java
-
-
-
-- Certifications
+- L'apprenti (Certifications)
   - Kubernetes
   - Google Cloud Platform
   - Microsoft Azure
@@ -49,11 +46,15 @@
 
 
 
-- L'humain
+- L'humain (Loisirs)
   - League of Legends (LoL)
-  - Calisthenics
   - Escalade de bloc
   - Escape games
+  - Calisthenics
+
+<figure>
+    <img src="ressources/calisthenics-meme.png" alt="vms" width="45%"/>
+</figure>
 
 
 
@@ -70,7 +71,9 @@ Pourquoi le cloud:
 - Peu de seniors
 - Valorisation des certifications
 
-
+<figure>
+    <img src="ressources/cloud-joke.jpeg" alt="vms" width="35%"/>
+</figure>
 
 ## Certification
 
@@ -85,4 +88,12 @@ Pourquoi le cloud:
 
 
 
-<!-- .slide: class="page-questions" -->
+
+## Vision du cours
+
+Pourquoi ce cours:
+
+- Introduire des principes de bases inter-cloud 
+- Présenter des technologies courantes du cloud
+- Préparer aux premiers entretiens Cloud et DevOps
+- Entamer le chemin de certification
