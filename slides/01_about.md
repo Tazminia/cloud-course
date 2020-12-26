@@ -64,12 +64,12 @@
 
 Pourquoi le cloud:
 
-- Secteur en demande constante de consultants
-- Plage salariale dans la fourchette haute du marché
-- Mise en place et manipulation de nouvelles technologies
-- Agnostique au langage utilisé
-- Peu de seniors
-- Valorisation des certifications
+- Secteur en `demande` constante de consultants
+- Plage salariale dans la fourchette `haute` du marché
+- Mise en place et manipulation de `nouvelles` technologies
+- `Agnostique` au langage utilisé
+- `Peu` de seniors voir pas du tout
+- `Valorisation` des certifications
 
 <figure>
     <img src="ressources/cloud-joke.jpeg" alt="vms" width="35%"/>
@@ -81,11 +81,10 @@ Pourquoi le cloud:
 
 - Ressources Internet d’auto apprentissage
   - Linux academy
-  - Cloud Guru
+  - [Cloud Guru](https://acloudguru.com/)
 - Plusieurs certifications disponibles
-  - Cloud provider: Azure, GCP, AWS…
+  - Cloud provider: [Azure](https://docs.microsoft.com/fr-fr/learn/certifications/), [GCP](https://cloud.google.com/certification?hl=fr), [AWS](https://aws.amazon.com/fr/certification/)…
   - Métier: Admin, Développeur, Data engineer, Security engineer…
-
 
 
 
@@ -93,7 +92,7 @@ Pourquoi le cloud:
 
 Pourquoi ce cours:
 
-- Introduire des principes de bases inter-cloud 
-- Présenter des technologies courantes du cloud
-- Préparer aux premiers entretiens Cloud et DevOps
-- Entamer le chemin de certification
+- Introduire des `principes` de bases `inter-cloud`
+- Présenter des `technologies courantes` du cloud
+- Préparer aux `premiers entretiens` Cloud et DevOps
+- Entamer le chemin de `certification`
