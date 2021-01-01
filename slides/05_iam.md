@@ -37,9 +37,46 @@ La gestion d'`identité` (identity), concerne les profils des utilisateurs des s
 
 Plusieurs moyens existent afin de prouver l'identité d'une personne, on notera principalement les suivants:
 
-- L'`active directory`: technologie très répondue qui se base sur la notion d'annuaire. L'ensemble des collaborateurs et des services (machines, applications, etc) sont définit de façon centralisée.
-- L'`Oauth2`: délègue la tâche d'authentification à un autre organisme tel que Google ou Facebook par exemple. Le cloud n'est pas le seul à adopter cette approche, de nombreux site et applications (les jeux par exemple) se basent souvent sur ce mécanisme.
-- L'`2FA`: 2 factor Authentication. C'est un mécanisme qui se base sur deux étape, la première correspond souvent à fournir un mot de passe et la seconde, valider l'identité via un code transmis par un élément personnel tel qu'un SMS sur votre smarthphone, ou encore une application tel que google authenticator ou microsoft authenticator.
+- Active directory
+- Oauth2
+- 2FA
+
+
+
+### L'active directory
+
+C'est une technologie très répondue qui se base sur la notion d'annuaire. L'ensemble des collaborateurs et des services (machines, applications, etc) sont définit de façon centralisée.
+
+ça peut être un active directory classique on premise ou un Azure Active Directory par exemple.
+
+Il est à noter que les cloud providers proposent des outils ou des mécanisme de synchronisation entre l'active directory on prem et l'annuaire managé.
+
+
+
+### Oauth2
+
+On délègue la tâche d'authentification à un autre organisme tel que Google ou Facebook par exemple. Le cloud n'est pas le seul à adopter cette approche, de nombreux site et applications (les jeux par exemple) se basent souvent sur ce mécanisme.
+
+Par exemple, sur le jeu LoL, on peut se connecter avec google, facebook et apple.
+
+<figure>
+    <img src="ressources/Oauth2-lol.png" alt="oauth2-lol" width="55%"/>
+</figure>
+
+
+
+### 2FA (2 factor Authentication)
+
+C'est un mécanisme qui se base sur deux étape:
+
+1. Fournir un mot de passe
+2. Valider l'identité via un code transmis par un élément personnel tel qu'un SMS sur votre smarthphone, ou encore une application tel que google authenticator ou microsoft authenticator.
+
+Voir documentation [azure](https://docs.microsoft.com/fr-fr/azure/active-directory/authentication/concept-mfa-howitworks) par exemple pour plus de détails.
+
+<figure>
+    <img src="ressources/2fa-azure.png" alt="2fa-azure" width="40%"/>
+</figure>
 
 
 
