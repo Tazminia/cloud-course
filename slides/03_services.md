@@ -33,7 +33,7 @@
 
 <!-- .slide: id="types" -->
 
-Le type de service est basé sur la notions de responsabilité. Pour identifier le type de service, il faut se poser la question `Qui gère quoi ?`
+Le type de service est basé sur la notion de responsabilité. Pour identifier le type de service, il faut se poser la question `Qui gère quoi ?`
 
 <figure>
     <img src="ressources/onprem-iaas-paas-saas.png" alt="vms" width="70%"/>
@@ -45,12 +45,12 @@ Le type de service est basé sur la notions de responsabilité. Pour identifier 
 
 Exemple d'une application `Java`:
 
-| Type | Tâches | Exemple |
-|-|-|-|
-| On premise | Création du réseau<br>Création du stockage<br>Mise en place de la machine<br>Installation de l'OS<br>Installation Java<br>Déploiement de l'application<br>Accéder à l'application | Machine dans un datacenter |
-| IaaS | Choix de l'OS<br>Installation Java<br>Déploiement de l'application<br>Accéder à l'application | GCP: Compute Engine<br>Azure: Virtual Machine |
-| PaaS | Déploiement de l'application<br>Accéder à l'application | GCP: App engine/GKE<br>Azure: App service/AKS |
-| SaaS | Accéder à l'application |  |
+| Type       | Tâches                                                                                                                                                                            | Exemple                                       |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| On premise | Création du réseau<br>Création du stockage<br>Mise en place de la machine<br>Installation de l'OS<br>Installation Java<br>Déploiement de l'application<br>Accéder à l'application | Machine dans un datacenter                    |
+| IaaS       | Choix de l'OS<br>Installation Java<br>Déploiement de l'application<br>Accéder à l'application                                                                                     | GCP: Compute Engine<br>Azure: Virtual Machine |
+| PaaS       | Déploiement de l'application<br>Accéder à l'application                                                                                                                           | GCP: App engine/GKE<br>Azure: App service/AKS |
+| SaaS       | Accéder à l'application                                                                                                                                                           |                                               |
 
 
 
@@ -60,12 +60,12 @@ Exemple d'une application `Java`:
 
 Les services proposé par le cloud sont de différentes catégories:
 
-| Catégorie | Exemple GCP | Exemple Azure |
-|-|-|-|
-| Calcul (Compute) | Compute engine<br>App engine<br>Cloud run<br>Cloud function<br>Google Kubernetes Engine (GKE) | Virtual machines<br>App service<br>Azure functions<br>Azure Kubernetes Service (AKS) |
-| Réseau (Network) | Virtual Private Clouds (VPCs)<br>Load balancers<br>Cloud router<br>Cloud CDN | Virtual Networks<br>Load balancer<br>Application gateway<br>Azure CDN |
-| Stockage (Storage) | Cloud Storage<br>Filestore | Storage Accounts<br>Azure data share |
-| Base de donnée (Data bases) | Cloud SQL<br>Cloud Spanner<br>Big table<br>Big Query<br>Firestore<br>Memorystore | Cosmos DB<br>Azure SQL<br>Maria db |
+| Catégorie                   | Exemple GCP                                                                                   | Exemple Azure                                                                        |
+| --------------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Calcul (Compute)            | Compute engine<br>App engine<br>Cloud run<br>Cloud function<br>Google Kubernetes Engine (GKE) | Virtual machines<br>App service<br>Azure functions<br>Azure Kubernetes Service (AKS) |
+| Réseau (Network)            | Virtual Private Clouds (VPCs)<br>Load balancers<br>Cloud router<br>Cloud CDN                  | Virtual Networks<br>Load balancer<br>Application gateway<br>Azure CDN                |
+| Stockage (Storage)          | Cloud Storage<br>Filestore                                                                    | Storage Accounts<br>Azure data share                                                 |
+| Base de donnée (Data bases) | Cloud SQL<br>Cloud Spanner<br>Big table<br>Big Query<br>Firestore<br>Memorystore              | Cosmos DB<br>Azure SQL<br>Maria db                                                   |
 
 
 
@@ -75,10 +75,10 @@ Les services proposé par le cloud sont de différentes catégories:
 
 Les services cloud proposent plusieurs niveau de localisation:
 
-| Catégorie | Définition | Exemple GCP | Exemple Azure |
-|-|-|-|-|
-| Régional | Service restreint à une seule région | Compute engine<br>GKE<br>Cloud SQL<br>Cloud storage (region) | Virtual machine<br>AKS<br>Azure SQL<br>Storage account (mode ZRS) |
-| Global | Service accéssible depuis plusieurs localisation géographique (voir toutes) | Cloud Spanner<br>Cloud storage (multi-region) | Cosmos DB<br>Storage account (mode GRS) |
+| Catégorie | Définition                                                                    | Exemple GCP                                                  | Exemple Azure                                                     |
+| --------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------- |
+| Régional  | Service restreint à une seule région                                          | Compute engine<br>GKE<br>Cloud SQL<br>Cloud storage (region) | Virtual machine<br>AKS<br>Azure SQL<br>Storage account (mode ZRS) |
+| Global    | Service accéssible depuis plusieurs localisations géographiques (voir toutes) | Cloud Spanner<br>Cloud storage (multi-region)                | Cosmos DB<br>Storage account (mode GRS)                           |
 
 Carte des régions GCP disponible [ici](https://cloud.google.com/about/locations?hl=en#regions)
 
@@ -96,7 +96,7 @@ Le choix d'un service cloud par rapport à un autre se fait en se basant sur les
 
 Il existe, également, d'autres critères de selection tel que le temps de réponse d'un service, son coût, etc.
 
-Des arbres de décisions existent pour aider à aiguiller le choix. 
+Des arbres de décisions existent pour aider à aiguiller le choix.
 
 Pour GCP par exemple, vous pouvez vous referrez à cet [article](https://medium.com/google-cloud/a-gcp-flowchart-a-day-2d57cc109401)
 

@@ -28,6 +28,7 @@
 - [Création d'un projet GCP](#/create-gcp-project)
 
 
+
 ## Les ressources sur GCP
 
 <!-- .slide: id="gcp-resources" -->
@@ -60,14 +61,12 @@ Azure propose l'arborescence suivante:
 </figure>
 
 
+
 ## Conclusions
 
 L'arborescence cloud imposée est souvent faite à des fin de facturation ou de séparation de droits.
 
-Dans le cas GCP, les niveaux `organisation` et `dossier` sont souvent limité à un domaine (@ensi-uma.tn, @zenika.com, etc). Pour les comptes non business ou particulier, GCP nous limite à l'utilisation des projets.
-
-
-<!-- .slide: class="page-tp1" -->
+Dans le cas GCP, les niveaux `organisation` et `dossier` sont souvent limité à un domaine (@ensi-uma.tn, @zenika.com, @norauto.com, etc). Pour les comptes non business ou particulier, GCP nous limite à l'utilisation des projets.
 
 
 

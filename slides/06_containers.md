@@ -26,6 +26,8 @@
 - [Modèle de déploiement classique](#/old-deployment)
 - [Limites du modèle classique](#/old-deployment-limits)
 - [La conteneurisation](#/containers)
+- [Docker](#/docker)
+- [Bonnes pratiques de la conteneurisation](#/containers-best-practices)
 
 
 
@@ -46,7 +48,7 @@ Les composants d'un déploiement sont comme suit:
 
 
 
-## Une machine par OS
+## Déploiement - Une machine par OS
 
 Une approche de déploiement serait de déployer plusieurs applications sur une seule grosse machine.
 
@@ -54,8 +56,8 @@ Une approche de déploiement serait de déployer plusieurs applications sur une 
     <img src="ressources/one-host-n-apps.png" alt="one-host-n-apps" width="40%"/>
 </figure>
 
-- Que faire si deux applications on besoin de versions différentes de la runtime ?
-- Que faire si deux applications on besoin de versions différentes d'un package (dépendance) ?
+- Que faire si deux applications ont besoin de versions différentes de la runtime ?
+- Que faire si deux applications ont besoin de versions différentes d'un package (dépendance) ?
 - Que faire si une application bug et cause une pénurie de ressources ? (noisy neighbour)
 - Que faire si une application comprend une vulnérabilité ?
 - Que faire si une mise à jour de l'OS cause une regréssion sur une seule application ?
@@ -63,7 +65,7 @@ Une approche de déploiement serait de déployer plusieurs applications sur une 
 
 
 
-## Une machine par application
+## Déploiement - Une machine par application
 
 Une approche de déploiement serait de déployer une application par machine.
 
@@ -97,20 +99,18 @@ Les limites des modèles de déploiement classiques sont principalement:
 
 
 
-## La conteneurisation (1/3)
+## La conteneurisation
 
 <!-- .slide: id="containers" -->
 
 Un conteneur (container) correspond à une `encapsulation` d'une application, capable d'utiliser les fonctionnalité du `kernel` d'une machine afin de s'exécuter dans un environnement `isolé` grâce à un environnement d'exécution de conteneur (`container runtime`).
 
-Les environnement d'exécutions de conteneurs les plus connus sont:
+Les environnements d'exécutions de conteneurs les plus connus sont:
 
 - docker
 - containerd
 
-Pour schématiser le contenu d'un conteneur, voir schéma ci-dessous:
-
-Ceci veut dire qu'un conteneur comporte les éléments suivants:
+Un conteneur encapsule les éléments suivants:
 
 <figure>
     <img src="ressources/container.png" alt="container" width="45%"/>
@@ -118,24 +118,142 @@ Ceci veut dire qu'un conteneur comporte les éléments suivants:
 
 
 
-## La conteneurisation (2/3)
+## Caractéristiques d'un conteneur
 
 Les caractéristiques principale des conteneurs sont les suivants:
 
-TODO: Explain !
-- isolé
-- volatile
-- léger
+- Isolation (isolated): Ce qui se fait dans le coneteneur se limite au conteneur (variable d'environnement, système de fichier, ports, etc).
+- Non persistent (Stateless): Ce qui se fait dans le conteneur meurt avec le conteneur (sauf si on utilise les volumes).
+- Volatile (volatile): Un conteneur est susceptible de redémarrer à tout instant et sa durée de vie est limitée (en comparaison avec une VM par exemple).
+- Léger (lightweight): Un conteneur partage le kernel du système d'exploitation de la machine hôte, il n'a donc pas besoin d'un OS par application.
 
 
 
-## La conteneurisation (3/3)
+## Volumes et ports
+
+#### Exposition de port
+
+Par défaut, les `ports` du conteneur ne sont `pas exposés` sur la machine hôte. Une application tournant sur le port 8080 peut être accessible dans le conteneur mais pas depuis la machine elle même.
+
+Cette isolation peut être rompue en demandant explicitement l'exposition du port. Dans le cas de `docker`, c'est fait via un paramètre `-p machineport:containerport`
+
+#### Exposition du système de fichiers
+
+Par défaut, les `systèmes de fichiers` de la machine hôte et du conteneur sont `isolés`. Si, une application crée un fichier `my-file.txt` dans un conteneur, le fichier ne sera pas visible sur la machine hôte.
+
+Cette isolation peut être rompue en demandant explicitement le partage du dossier. Dans le cas de `docker`, c'est fait via un paramètre `-v machinepath:containerpath`
+
+
+
+## Avantage pour le déploiement
 
 L'isolation au niveau du conteneur permet de déployer, sur une même et seule machine hôte:
 
-- des environnements d'une même application sur une seule machine hôte.
-- des versions d'une application même.
+- des environnements différents d'une même application.
+- des versions différentes d'une même application.
 - des applications qui utilisent une même dépendance mais exigents des versions différentes.
+- des applications qui exposent un même port.
 
 
-TODO: Image ici pour illustrer tout ça
+<figure>
+    <img src="ressources/containers-deploy.png" alt="container" width="50%"/>
+</figure>
+
+
+
+## Docker
+
+Docker est un environnement d'exécution de conteneur, tout comme containerd.
+
+Il permet de créer et d'exécuter les conteneur.
+
+Quand on parle de docker, 3 notions reviennent souvent:
+
+- Le dockerfile
+- L'image
+- Le conteneur
+
+
+
+#### Dockerfile
+
+Un `dockerfile` est un fichier recette qui comprend des instructions.
+
+`Chaque instruction` entraîne la création d'`une couche` (layer).
+
+```
+FROM python:3.7-slim
+COPY main.py /app/bin
+CMD ["python", "/app/bin/main.py"]
+```
+
+Les couches (layers) définies dans ce `dockerfile` sont:
+
+| Instruction                          | commentaire                                                                                   |
+| ------------------------------------ | --------------------------------------------------------------------------------------------- |
+| `FROM` python:3.7-slim               | partir initialement de python 3.7                                                             |
+| `COPY` main.py /app/bin              | copier le script `main.py` depuis la machine hôte dans le conteneur sous le chemin `/app/bin` |
+| `CMD` ["python", "/app/bin/main.py"] | définir la commande à lancer au démarrage du conteneur                                        |
+
+
+
+#### Image
+
+Une `image`  est un livrable qui contient un ensemble de couches définit dans le `dockerfile`.
+
+Pour construire une image on utilise la commande qui suit:
+
+```
+docker build -f mydockerfile -t myimagename:0.0.1 .
+```
+
+La construction se fait en incrémental:
+
+1. Lire une instruction du docker file et l'exécuter
+2. Construire une image intermédiaire
+3. Partir de la nouvelle image intermédiaire
+4. Reprendre l'étape 1
+
+
+
+
+#### Conteneur
+
+La commande `run` permet de lancer un `conteneur` à partir d'une image
+
+```
+docker run myimagename:0.0.1
+```
+
+#### Variables d'environnement
+
+On peut surcharger les valeurs des variables d'environnement pour un conteneur comme suit:
+
+```
+docker run -e CONF="preprod" myimagename:0.0.1
+```
+
+#### Commande au démarrage
+
+On peut surcharger la commande à lancer au démarrage:
+
+```
+docker run myimagename:0.0.1 /bin/bash
+```
+
+
+
+## Bonnes pratiques de la conteneurisation
+
+<!-- .slide: id="containers-best-practices" -->
+
+L'utilisation des conteneurs peut être optimisée en suivant les guidelines ci-dessous:
+
+- Favoriser le `stateless`: tenant compte de leur aspect volatile, les conteneurs ne sont pas spécialement adapté pour les applications à état. Il est mieux de connecter votre conteneur à une base de donnée externe (service cloud par exemple), plutôt que d'utiliser les volumes pour la persistence.
+- Viser un `démarrage rapide`: tenant compte de leur aspect volatile, les conteneurs sont susceptible au redémarrage. Il est donc important, que les applications conteneurisées puissent démarrer rapidement.
+- Opter pour une `image de base réduite`: L'image de base est notre toute première couche, elle affecte directement la taille de notre image finale et sa surface d'attaque.
+- Réflechir à l'`ordre des instructions`: l'ordre des instructions de création peut favoriser ou pas l'utilisation de cache et donc améliorer le temps de construction des iimages et leurs coût de stockage. (à voir dans le TP)
+
+
+
+<!-- .slide: class="page-questions" -->

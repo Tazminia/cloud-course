@@ -75,6 +75,8 @@ Pourquoi le cloud:
     <img src="ressources/cloud-joke.jpeg" alt="vms" width="35%"/>
 </figure>
 
+
+
 ## Certification
 
 <!-- .slide: id="certification" -->

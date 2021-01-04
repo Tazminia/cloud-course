@@ -47,17 +47,17 @@ Plusieurs moyens existent afin de prouver l'identité d'une personne, on notera 
 
 C'est une technologie très répondue qui se base sur la notion d'annuaire. L'ensemble des collaborateurs et des services (machines, applications, etc) sont définit de façon centralisée.
 
-ça peut être un active directory classique on premise ou un Azure Active Directory par exemple.
+Ça peut être un active directory classique on premise ou un Azure Active Directory par exemple.
 
-Il est à noter que les cloud providers proposent des outils ou des mécanisme de synchronisation entre l'active directory on prem et l'annuaire managé.
+Il est à noter que les cloud providers proposent des moyens de synchronisation entre l'active directory on prem et l'annuaire managé.
 
 
 
 ### Oauth2
 
-On délègue la tâche d'authentification à un autre organisme tel que Google ou Facebook par exemple. Le cloud n'est pas le seul à adopter cette approche, de nombreux site et applications (les jeux par exemple) se basent souvent sur ce mécanisme.
+On délègue la tâche d'authentification à un autre organisme tel que `google` ou `facebook` par exemple. Le cloud n'est pas le seul à adopter cette approche, de nombreux sites et applications (les jeux par exemple) se basent souvent sur ce mécanisme.
 
-Par exemple, sur le jeu LoL, on peut se connecter avec google, facebook et apple.
+Par exemple, sur le jeu LoL, on peut se connecter avec `google`, `facebook` et `apple`.
 
 <figure>
     <img src="ressources/Oauth2-lol.png" alt="oauth2-lol" width="55%"/>
@@ -72,7 +72,7 @@ C'est un mécanisme qui se base sur deux étape:
 1. Fournir un mot de passe
 2. Valider l'identité via un code transmis par un élément personnel tel qu'un SMS sur votre smarthphone, ou encore une application tel que google authenticator ou microsoft authenticator.
 
-Voir documentation [azure](https://docs.microsoft.com/fr-fr/azure/active-directory/authentication/concept-mfa-howitworks) par exemple pour plus de détails.
+Voir documentation [azure](https://docs.microsoft.com/fr-fr/azure/active-directory/authentication/concept-mfa-howitworks) pour plus de détails.
 
 <figure>
     <img src="ressources/2fa-azure.png" alt="2fa-azure" width="40%"/>
@@ -90,7 +90,7 @@ Les cloud providers implémentent la gestion d'accès comme suit:
 
 - Définition de `roles`: un role est un `ensemble de permissions` sur une ou plusieurs ressources. On peut également parler de matrice de droits.
 - `Héritage`: un role est `propagé` du parent à l'enfant. Par exemple un role donné au niveau d'une organisation ou d'un folder, est actif au niveau des projets et ressources incluses dedans.
-- Approche  `permissive`: un droit donné à un niveau élevé ne peut `pas être révoqué` à un niveau plus bas. Par exemple, un  role d'`écriture` au niveau d'une organisation ou d'un folder sera toujours `prioritaire` par rapport à un role de `lecture` au niveau d'une ressource incluses dedans.
+- Approche  `permissive`: un droit donné à un niveau élevé ne peut `pas être révoqué` à un niveau plus bas. Par exemple, un  rôle d'`écriture` au niveau d'une organisation ou d'un folder sera toujours `prioritaire` par rapport à un rôle de `lecture` au niveau d'une ressource inclus dedans.
 
 
 
@@ -102,6 +102,6 @@ La gestion de l'identité et de l'accès (Identity & Access Management) se résu
 
 `Qui` accède à `quelles` ressource et `quelles` opérations peut-il faire dessus ?
 
-Une bonne pratique au niveau de l'IAM est le `principe du moindre privilège` (least privilege principle) qui consiste à donner le `minimum` de droit à un utilisateur pour qu'il puisse effectuer sa mission. 
+Une bonne pratique au niveau de l'IAM est le `principe du moindre privilège` (least privilege principle) qui consiste à donner le `minimum` de droit à un utilisateur pour qu'il puisse effectuer sa mission.
 
 Par exemple, fournir un lien de `lecture` avec une `durée limitée` à des partenaires souhaitant accéder `temporairement` à un fichier sur google cloud storage.
