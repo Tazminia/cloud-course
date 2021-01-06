@@ -63,7 +63,7 @@
 - Agilité business: capacité à répondre rapidement à une demande business.
   - Dans le contexte on premise on a deux choix:
     - Favoriser la productivité: Prévoir des machines `en avance` et accepter qu'on puisse avoir des machines `non utilisées` prêtes à l'emploi en cas de nouveau besoin.
-    - Favoriser le coût: Prévoir le juste besoin `actuel ou à court` terme et accepter qu'on doive `attendre` le passage de commande et l'installation du matériel en cas de nouveau beson.
+    - Favoriser le coût: Prévoir le juste besoin `actuel ou à court` terme et accepter qu'on doive `attendre` le passage de commande et l'installation du matériel en cas de nouveau besoin.
   - Cloud: Montée en charges facile via allocation quasi `instantanée` de nouvelles ressources.
 - Pay as you go: La facturation à l’utilisation permet une meilleure `maîtrise des coûts`.
 

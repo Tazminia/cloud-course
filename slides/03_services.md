@@ -52,6 +52,8 @@ Exemple d'une application `Java`:
 | PaaS       | Déploiement de l'application<br>Accéder à l'application                                                                                                                           | GCP: App engine/GKE<br>Azure: App service/AKS |
 | SaaS       | Accéder à l'application                                                                                                                                                           |                                               |
 
+D'autres termes existent comme le NaaS (network), DaaS (Database), etc. Pour la plupart, c'est simplement pour expliquer que c'est un service managé. Par exemple aiven est un service DaaS.
+
 
 
 ## Catégories de services
