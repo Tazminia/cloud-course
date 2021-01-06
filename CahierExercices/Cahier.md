@@ -1,10 +1,15 @@
 ## Plan
-*Objectif* : Mettre en place quelque notions de cloud abordé dans le cours.
+
+*Objectif* : Se familiariser avec les concepts de conteneurisation
 
 Déroulement :
-* GCP
-  * TP1 : ???
+
+* Docker
+  * TP1 : Exploration d'une image alpine
+  * TP2 : Exploration d'une image nginx
+  * TP3 : Variabiliser les environnements
+  * TP4 : Persistance de données
 
 ## Pré-requis
 
-Vous devez posséder un compte GCP. Si vous en avez pas, utilisez ce [lien](https://cloud.google.com/apigee/docs/hybrid/v1.1/precog-gcpaccount)
+Vous devez installer docker sur votre machine
