@@ -105,3 +105,7 @@ La gestion de l'identité et de l'accès (Identity & Access Management) se résu
 Une bonne pratique au niveau de l'IAM est le `principe du moindre privilège` (least privilege principle) qui consiste à donner le `minimum` de droit à un utilisateur pour qu'il puisse effectuer sa mission.
 
 Par exemple, fournir un lien de `lecture` avec une `durée limitée` à des partenaires souhaitant accéder `temporairement` à un fichier sur google cloud storage.
+
+
+
+<!-- .slide: class="page-questions" -->
