@@ -7,7 +7,7 @@
 Il peut être utile de lancer un shell dans un conteneur afin de pouvoir l'explorer et l'exploiter. Pour lancer un shell, utilisez la commande qui suit:
 
 ```console
-tjegham ~ $ docker run --rm -it python:3.8.7-alpine3.12 /bin/sh
+tjegham ~ $ docker run -it python:3.8.7-alpine3.12 /bin/sh
 / # whoami
 root
 / # exit
@@ -77,7 +77,7 @@ Hello world !
 
 ## Explorer l'image
 
-N'oubliez pas, le caractère `isolé` d'un conteneur indique que tout ce qui passe dans le conteneur n'affecte que le conteneur lui même. En effet, essayons de relancer un conteneur à partir de l'image de base ``et voyons si vim existe dedans:
+N'oubliez pas, le caractère `isolé` d'un conteneur indique que tout ce qui passe dans le conteneur n'affecte que le conteneur lui même. En effet, essayons de relancer un conteneur à partir de l'image de base `python:3.8.7-alpine3.12` et voyons si vim existe dedans:
 
 ```console
 tjegham ~ $ docker run --rm  -it python:3.8.7-alpine3.12 /bin/sh
