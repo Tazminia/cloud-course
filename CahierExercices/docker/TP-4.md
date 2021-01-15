@@ -86,6 +86,7 @@ Etant donné la caractéristique `non persistent` de notre conteneur, le fichier
 tjegham ~ $ echo "Hello from host machine !" > greetings.txt
 tjegham ~ $ cat greetings.txt
 Hello from host machine !
+tjegham ~ $ docker run -v $(pwd):/data --rm -it ubuntu:21.04 /bin/bash 
 root@99b1f73e131a:/# cat /data/greetings.txt
 Hello from host machine !
 ```
